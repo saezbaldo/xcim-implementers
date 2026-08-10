@@ -25,3 +25,8 @@ python -m unittest tools.test_shadow_mode_adapter
 The adapter only validates the D-001 header pair and reports a shadow
 observation. It does not fetch references, establish issuer trust or verify a
 proof bundle.
+
+The same command runs `check_public_artifacts.py`, which fails on private-key
+blocks or credential-like assignments before a public source drop can pass CI.
+See [`../SECURITY-REVIEW.md`](../SECURITY-REVIEW.md) for the boundary and the
+manual review items that remain open.

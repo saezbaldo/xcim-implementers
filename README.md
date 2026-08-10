@@ -26,6 +26,8 @@ EARLY-PARTNER-APPLICATION.md # intake brief for the first cohort
 - A policy-neutral shadow-mode header adapter and five focused unit tests show
   how senders and receivers can wire `XCIM-Reference`/`XCIM-Proof` without
   changing delivery policy.
+- `SECURITY-REVIEW.md` records the automated artifact scan and the external
+  review gates that are still open.
 - No independent implementation has a public interoperability result.
 
 The authoritative public program status is

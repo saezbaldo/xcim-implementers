@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = ROOT / "tools"
 VALIDATOR = TOOLS / "validate_protocol_schemas.py"
+SECURITY_SCAN = TOOLS / "check_public_artifacts.py"
 
 
 def run(label: str, command: list[str]) -> int:
@@ -42,6 +43,7 @@ def main() -> int:
     runners = sorted(TOOLS.glob("verify*.mjs"))
     checks: list[tuple[str, list[str]]] = []
     if not args.node_only:
+        checks.append(("Public artifact security scan", [sys.executable, str(SECURITY_SCAN)]))
         checks.append(
             (
                 "Python shadow-mode adapter tests",
