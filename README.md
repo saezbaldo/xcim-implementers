@@ -23,6 +23,9 @@ EARLY-PARTNER-APPLICATION.md # intake brief for the first cohort
 - Canonical schemas and byte-level fixture definitions are published for draft review.
 - Python and Node generators/validators/verifiers are published, with a unified
   `xcim_check.py` command for local and CI runs.
+- A policy-neutral shadow-mode header adapter and five focused unit tests show
+  how senders and receivers can wire `XCIM-Reference`/`XCIM-Proof` without
+  changing delivery policy.
 - No independent implementation has a public interoperability result.
 
 The authoritative public program status is

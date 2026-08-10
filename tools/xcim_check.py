@@ -42,6 +42,12 @@ def main() -> int:
     runners = sorted(TOOLS.glob("verify*.mjs"))
     checks: list[tuple[str, list[str]]] = []
     if not args.node_only:
+        checks.append(
+            (
+                "Python shadow-mode adapter tests",
+                [sys.executable, "-m", "unittest", "tools.test_shadow_mode_adapter"],
+            )
+        )
         checks.append(("Python schema and fixture validator", [sys.executable, str(VALIDATOR)]))
     if not args.python_only:
         checks.extend((f"Node verifier: {path.name}", ["node", str(path)]) for path in runners)

@@ -1,7 +1,8 @@
 # Implementer tools
 
 The public draft includes an offline schema/fixture validator, deterministic
-Node vector verifiers and a single entry point for local or CI use:
+Node vector verifiers, a policy-neutral shadow-mode header adapter and a single
+entry point for local or CI use:
 
 ```powershell
 python -m pip install -r tools/requirements-ci.txt
@@ -13,3 +14,14 @@ repository root. Use `--python-only`, `--node-only` or `--list` to narrow or
 inspect the checks. A green run proves that the published draft artifacts are
 self-consistent; it does not prove interoperability with an independent
 sender, receiver or production trust network.
+
+To exercise sender/receiver wiring without changing delivery policy:
+
+```powershell
+python tools/shadow_mode_adapter.py examples/xcim-shadow-mode.eml
+python -m unittest tools.test_shadow_mode_adapter
+```
+
+The adapter only validates the D-001 header pair and reports a shadow
+observation. It does not fetch references, establish issuer trust or verify a
+proof bundle.
