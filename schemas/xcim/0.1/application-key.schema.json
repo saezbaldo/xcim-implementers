@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/application-key.schema.json",
+  "title": "XCIM 0.1 Application Key Registry Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xcim_version", "object_type", "app_id", "app_epoch", "key_id", "alg", "public_jwk",
+    "public_key_thumbprint", "valid_from", "valid_until", "published_at", "status"],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "application_key" },
+    "app_id": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~:-]+$" },
+    "app_epoch": { "$ref": "#/$defs/positive" },
+    "key_id": { "type": "string", "pattern": "^[A-Za-z0-9_.#:-]{1,200}$" },
+    "alg": { "const": "EdDSA" },
+    "public_jwk": {
+      "type": "object", "additionalProperties": false, "required": ["crv", "kty", "x"],
+      "properties": {
+        "crv": { "const": "Ed25519" }, "kty": { "const": "OKP" },
+        "x": { "type": "string", "pattern": "^[A-Za-z0-9_-]{43}$" }
+      }
+    },
+    "public_key_thumbprint": { "type": "string", "pattern": "^[A-Za-z0-9_-]{43}$" },
+    "valid_from": { "$ref": "#/$defs/dateTime" },
+    "valid_until": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+    "published_at": { "$ref": "#/$defs/dateTime" },
+    "status": { "const": "active" }
+  },
+  "$defs": {
+    "positive": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "dateTime": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" }
+  }
+}

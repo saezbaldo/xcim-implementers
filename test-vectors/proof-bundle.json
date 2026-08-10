@@ -1,0 +1,82 @@
+{
+  "batch_manifest_hash_evm_hex": "0xb4e14916e59f3be7101662407aa77e1144b6e6295ad5c0703aa6175916fef7e9",
+  "bundle": {
+    "anchors": [
+      {
+        "batch_manifest_hash": "tOFJFuWfO-cQFmJAeqd-EUS25ila1cBwOqYXWRb-9-k",
+        "batch_sequence": 9,
+        "block_hash": "0x9393939393939393939393939393939393939393939393939393939393939393",
+        "block_number": 12345678,
+        "confirmations": 128,
+        "contract": "0x1111111111111111111111111111111111111111",
+        "network": "eip155:137",
+        "status": "finalized",
+        "transaction_hash": "0x9292929292929292929292929292929292929292929292929292929292929292"
+      }
+    ],
+    "batch_manifests": [
+      {
+        "batch_sequence": 9,
+        "manifest": {
+          "payload": "eyJiYXRjaF9ldmVudF9jb3VudCI6MSwiYmF0Y2hfc2VxdWVuY2UiOjksImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA1VDEyOjA5OjAwWiIsImV2ZW50X3Jvb3QiOiJvS1NOaG5HSnJkUEFsOTZ2NWFwZDhaLTI1dTlNNkNYTlFpUVRpaGVrOWlvIiwiZmlyc3Rfc2VxdWVuY2UiOjksImlzc3Vlcl9pZCI6InVybjp4Y2ltOmlzc3VlcjplbWFibGVkLmNvbSIsImxhc3Rfc2VxdWVuY2UiOjksIm9iamVjdF90eXBlIjoiYmF0Y2hfbWFuaWZlc3QiLCJwcmV2aW91c19hbmNob3JfaGFzaCI6ImdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUUiLCJwcmV2aW91c19ldmVudF9yb290IjoibTVuMHNVUFBKQ3ZGeGZTNjJ2VlltS1l1QkdwVmFoSzBJZTFCYlctSTV3TSIsInByZXZpb3VzX3RyZWVfc2l6ZSI6OCwicHJvb2ZfYnVuZGxlX3NldF9oYXNoIjoiZ29LQ2dvS0Nnb0tDZ29LQ2dvS0Nnb0tDZ29LQ2dvS0Nnb0tDZ29LQ2dvSSIsInN0YXRlX3Jvb3QiOiJKNC1tWlZQcXdNTWhqTlBpcWNNQzlQVWVmVVRLdWExemxCamtrVmFiYVNjIiwidHJlZV9zaXplIjo5LCJ4Y2ltX3ZlcnNpb24iOiIwLjEifQ",
+          "protected": "eyJhbGciOiJFZERTQSIsImtpZCI6ImVtYWJsZWQtdGVzdC1lZDI1NTE5LTAxIiwidHlwIjoiYXBwbGljYXRpb24veGNpbS1iYXRjaC1tYW5pZmVzdCtqY3MifQ",
+          "signature": "0BpSWIvfv3f7w8tWpVC8_ST5Jk-PwQaLwdNc9x2s5absTLorUW5eXDuKQquxEdX9fi0P4xr7bh1yjpan8KdqCQ"
+        }
+      }
+    ],
+    "bundle_id": "urn:xcim:proof-bundle:test-01",
+    "current_status_proof": {
+      "anchor_reference": "urn:xcim:test-anchor:9",
+      "batch_sequence": 9,
+      "next_update": "2026-08-06T12:00:00Z",
+      "non_empty_siblings": [],
+      "presence": true,
+      "sibling_bitmap": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "state_key": "ZEO29GzlYgHCFc9bbUpeUZrPZqYf01PpZK4P_8pH2kg",
+      "state_root": "J4-mZVPqwMMhjNPiqcMC9PUefUTKua1zlBjkkVabaSc",
+      "state_value": {
+        "effective_at": "2026-08-05T12:08:00Z",
+        "latest_event_commitment": "xqukwVTsDBWlpkWUuEep18XRi1NtfIGa5-ukbW_Gj6A",
+        "object_id": "urn:xcim:permission:test-permission-01",
+        "status": "active",
+        "status_epoch": 1
+      },
+      "this_update": "2026-08-05T12:00:00Z",
+      "tree_depth": 256
+    },
+    "event_inclusion_proof": {
+      "batch_sequence": 9,
+      "event_root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "leaf_index": 7,
+      "path": [
+        "8kjy-LiQmn3cm9o_N9avr1BKlZSljam4BByyWT5XiRQ",
+        "WCGzv3qQ80-qENYeL_dCetvIQbKT4_hAjVk3dYVa2nM",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+        "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA"
+      ],
+      "tree_size": 9
+    },
+    "generated_at": "2026-08-05T12:10:00Z",
+    "object_type": "xcim_proof_bundle",
+    "receipt": {
+      "payload": "eyJhcHBsaWNhdGlvbiI6eyJhcHBfZXBvY2giOjEsImFwcF9pZCI6InVybjp4Y2ltOmFwcDp0ZXN0LWFwcC0wMSIsImFwcF9rZXlfaWQiOiJ0ZXN0LWFwcC1rZXktMDEiLCJjbGllbnRfaWRfY29tbWl0bWVudCI6IkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkUiLCJvYXV0aF9iaW5kaW5nX2lkIjoieG9iX3Rlc3RfMDEiLCJwcm92aWRlcl9pc3N1ZXIiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20ifSwiZGVjbGFyZWRfc2VuZGVyX2RvbWFpbnMiOlsibWFpbC5leGFtcGxlLmNvbSJdLCJleHBpcmVzX2F0IjpudWxsLCJpZGVudGl0eV9ldmlkZW5jZSI6eyJhZGFwdGVyX3ZlcnNpb24iOiJnb29nbGUtb2lkYy0wLjEiLCJhZGRyZXNzX2F1dGhvcml0eV9jbGFzcyI6InByb3ZpZGVyX2F1dGhvcml0YXRpdmUiLCJhdXRoZW50aWNhdGVkX2F0IjoiMjAyNi0wOC0wNVQxMjowMDowMFoiLCJjb21wYXJpc29uX3J1bGVfaWQiOiJnb29nbGUtY2FzZS1pbnNlbnNpdGl2ZS0wLjEiLCJldmlkZW5jZV90eXBlIjoib2lkY19pZF90b2tlbiIsIm5vbmNlX2NvbW1pdG1lbnQiOiJJaUlpSWlJaUlpSWlJaUlpSWlJaUlpSWlJaUlpSWlJaUlpSWlJaUlpSWlJIiwib2F1dGhfY2xpZW50X2lkX2NvbW1pdG1lbnQiOiJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFIiwicHJvdmlkZXJfcG9saWN5X3ZlcnNpb24iOiJnb29nbGUtMjAyNi0wOC0wMSIsInByb3ZpZGVyX3N1YmplY3RfY29tbWl0bWVudCI6Ik16TXpNek16TXpNek16TXpNek16TXpNek16TXpNek16TXpNek16TXpNek0ifSwiaXNzdWFuY2VfcHJvZmlsZSI6Im9pZGNfaG9zdGVkX2NvbnNlbnQiLCJpc3N1ZWRfYXQiOiIyMDI2LTA4LTA1VDEyOjAxOjAwWiIsImlzc3VlciI6Imh0dHBzOi8vaXNzdWVyLmVtYWJsZWQuY29tIiwiaXNzdWVyX2luZGVwZW5kZW5jZSI6ImluZGVwZW5kZW50Iiwibm90X2JlZm9yZSI6IjIwMjYtMDgtMDVUMTI6MDE6MDBaIiwib2JqZWN0X3R5cGUiOiJ4Y2ltX3JlY2VpcHQiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXphdGlvbl9raW5kIjoiZXhwbGljaXRfY29uc2VudCIsImRlY2lzaW9uIjoiYWN0aXZlIiwiZXhwaXJlc19hdCI6bnVsbCwiZ3JhbnRlZF9hdCI6IjIwMjYtMDgtMDVUMTI6MDA6NTlaIiwicGVybWlzc2lvbl9pZCI6InVybjp4Y2ltOnBlcm1pc3Npb246dGVzdC1wZXJtaXNzaW9uLTAxIiwicHVycG9zZV9pZCI6Im1hcmtldGluZy5uZXdzbGV0dGVyIiwicmVxdWlyZWQiOmZhbHNlfV0sInByZXNlbnRhdGlvbiI6eyJhY2NlcHRlZF9hdCI6IjIwMjYtMDgtMDVUMTI6MDA6NTlaIiwibG9jYWxlIjoiZW4iLCJtYW5pZmVzdF9oYXNoIjoiUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUkVSRVJFUSIsIm1hbmlmZXN0X2lkIjoidXJuOnhjaW06bWFuaWZlc3Q6dGVzdC1tYW5pZmVzdC0wMSIsIm1vZGUiOiJpc3N1ZXJfaG9zdGVkX3RvcF9sZXZlbCIsIm9yaWdpbiI6Imh0dHBzOi8vY29uc2VudC5lbWFibGVkLmNvbSIsInJlbmRlcmluZ190ZW1wbGF0ZV92ZXJzaW9uIjoiaG9zdGVkLWNvbnNlbnQtdjAuNCJ9LCJyZWNlaXB0X2lkIjoidXJuOnhjaW06cmVjZWlwdDp0ZXN0LXJlY2VpcHQtMDEiLCJyZWNpcGllbnQiOnsiaWRlbnRpdHlfYXNzdXJhbmNlIjoib2lkY19wcm92aWRlcl9hdXRoZW50aWNhdGVkIiwicGFpcndpc2VfaWQiOiJWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZVIn0sInhjaW1fdmVyc2lvbiI6IjAuMSJ9",
+      "protected": "eyJhbGciOiJFZERTQSIsImtpZCI6ImVtYWJsZWQtdGVzdC1lZDI1NTE5LTAxIiwidHlwIjoiYXBwbGljYXRpb24veGNpbS1yZWNlaXB0K2pjcyJ9",
+      "signature": "FmEXi9ZXUxX-XhUDUtk69i0YJoYiscNcR6IRdgMiWrN0XYqfZBThsK6oC9NzSeTIucfL6aWy7iHqimoueqguCg"
+    },
+    "receipt_commitment": "xqukwVTsDBWlpkWUuEep18XRi1NtfIGa5-ukbW_Gj6A",
+    "receipt_event": {
+      "created_at": "2026-08-05T12:07:00Z",
+      "event_id": "urn:xcim:event:test-08",
+      "event_type": "receipt_issued",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "xqukwVTsDBWlpkWUuEep18XRi1NtfIGa5-ukbW_Gj6A",
+      "object_type": "transparency_event",
+      "sequence_number": 8,
+      "xcim_version": "0.1"
+    },
+    "xcim_version": "0.1"
+  },
+  "expected_result": "XCIM_PASS",
+  "issuer_public_key_raw_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg",
+  "vector_id": "xcim-0.1-full-proof-bundle-01"
+}

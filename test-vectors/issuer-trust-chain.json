@@ -1,0 +1,76 @@
+{
+  "accreditation": {
+    "accreditation_epoch": 1,
+    "accreditation_id": "urn:xcim:accreditation:emabled-01",
+    "assurance_level": "organization_and_controllers_reviewed",
+    "issuer_id": "urn:xcim:issuer:emabled.com",
+    "issuer_key_commitments": [
+      "cXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXE"
+    ],
+    "object_type": "issuer_accreditation",
+    "policy_version": "xcim-issuer-policy-0.1",
+    "previous_entry_commitment": null,
+    "registry": "https://registry.xcim.net",
+    "review_evidence_commitment": "cnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnI",
+    "reviewed_at": "2026-08-05T14:00:00Z",
+    "status": "active",
+    "valid_from": "2026-08-05T14:00:00Z",
+    "valid_until": "2027-08-05T14:00:00Z",
+    "xcim_version": "0.1"
+  },
+  "accreditation_jws": {
+    "payload": "eyJhY2NyZWRpdGF0aW9uX2Vwb2NoIjoxLCJhY2NyZWRpdGF0aW9uX2lkIjoidXJuOnhjaW06YWNjcmVkaXRhdGlvbjplbWFibGVkLTAxIiwiYXNzdXJhbmNlX2xldmVsIjoib3JnYW5pemF0aW9uX2FuZF9jb250cm9sbGVyc19yZXZpZXdlZCIsImlzc3Vlcl9pZCI6InVybjp4Y2ltOmlzc3VlcjplbWFibGVkLmNvbSIsImlzc3Vlcl9rZXlfY29tbWl0bWVudHMiOlsiY1hGeGNYRnhjWEZ4Y1hGeGNYRnhjWEZ4Y1hGeGNYRnhjWEZ4Y1hGeGNYRSJdLCJvYmplY3RfdHlwZSI6Imlzc3Vlcl9hY2NyZWRpdGF0aW9uIiwicG9saWN5X3ZlcnNpb24iOiJ4Y2ltLWlzc3Vlci1wb2xpY3ktMC4xIiwicHJldmlvdXNfZW50cnlfY29tbWl0bWVudCI6bnVsbCwicmVnaXN0cnkiOiJodHRwczovL3JlZ2lzdHJ5LnhjaW0ubmV0IiwicmV2aWV3X2V2aWRlbmNlX2NvbW1pdG1lbnQiOiJjbkp5Y25KeWNuSnljbkp5Y25KeWNuSnljbkp5Y25KeWNuSnljbkp5Y25JIiwicmV2aWV3ZWRfYXQiOiIyMDI2LTA4LTA1VDE0OjAwOjAwWiIsInN0YXR1cyI6ImFjdGl2ZSIsInZhbGlkX2Zyb20iOiIyMDI2LTA4LTA1VDE0OjAwOjAwWiIsInZhbGlkX3VudGlsIjoiMjAyNy0wOC0wNVQxNDowMDowMFoiLCJ4Y2ltX3ZlcnNpb24iOiIwLjEifQ",
+    "protected": "eyJhbGciOiJFZERTQSIsImtpZCI6InhjaW0tcmVnaXN0cnktdGVzdC0wMSIsInR5cCI6ImFwcGxpY2F0aW9uL3hjaW0taXNzdWVyLWFjY3JlZGl0YXRpb24ramNzIn0",
+    "signature": "66Sv8QX0YKIYngkAKyv0r_rLWP5RTOaRBlWRlYutLHWmgCxYc4y66eGzvXztI4BIBy1JyKZuD9ABR-RqxIndBQ"
+  },
+  "expected_result": "XCIM_PASS_ANCHOR_PENDING",
+  "issuer_metadata": {
+    "accreditation_reference": {
+      "accreditation_epoch": 1,
+      "accreditation_id": "urn:xcim:accreditation:emabled-01",
+      "entry_uri": "https://registry.xcim.net/v1/issuers/emabled.com/accreditations/1",
+      "registry": "https://registry.xcim.net"
+    },
+    "anchor_networks": [
+      {
+        "contract": "0x1111111111111111111111111111111111111111",
+        "network": "eip155:137"
+      }
+    ],
+    "batch_mirrors": [
+      "https://mirror.emabled.com/"
+    ],
+    "consent_endpoint": "https://consent.emabled.com/authorize",
+    "issuance_profiles_supported": [
+      "oidc_hosted_consent"
+    ],
+    "issued_at": "2026-08-05T14:01:00Z",
+    "issuer": "https://issuer.emabled.com",
+    "issuer_id": "urn:xcim:issuer:emabled.com",
+    "jwks_uri": "https://issuer.emabled.com/.well-known/xcim-keys.json",
+    "metadata_epoch": 1,
+    "object_type": "issuer_metadata",
+    "policy_uri": "https://issuer.emabled.com/issuance-policy",
+    "revocation_endpoint": "https://revoke.emabled.com/",
+    "security_contact": "mailto:security@emabled.com",
+    "status_endpoint": "https://issuer.emabled.com/v1/xcim/status",
+    "supported_identity_assurance": [
+      "oidc_provider_authenticated"
+    ],
+    "transparency_log": "https://log.emabled.com/",
+    "valid_from": "2026-08-05T14:01:00Z",
+    "valid_until": "2027-08-05T14:00:00Z",
+    "xcim_version": "0.1",
+    "xcim_versions": [
+      "0.1"
+    ]
+  },
+  "issuer_metadata_jws": {
+    "payload": "eyJhY2NyZWRpdGF0aW9uX3JlZmVyZW5jZSI6eyJhY2NyZWRpdGF0aW9uX2Vwb2NoIjoxLCJhY2NyZWRpdGF0aW9uX2lkIjoidXJuOnhjaW06YWNjcmVkaXRhdGlvbjplbWFibGVkLTAxIiwiZW50cnlfdXJpIjoiaHR0cHM6Ly9yZWdpc3RyeS54Y2ltLm5ldC92MS9pc3N1ZXJzL2VtYWJsZWQuY29tL2FjY3JlZGl0YXRpb25zLzEiLCJyZWdpc3RyeSI6Imh0dHBzOi8vcmVnaXN0cnkueGNpbS5uZXQifSwiYW5jaG9yX25ldHdvcmtzIjpbeyJjb250cmFjdCI6IjB4MTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMSIsIm5ldHdvcmsiOiJlaXAxNTU6MTM3In1dLCJiYXRjaF9taXJyb3JzIjpbImh0dHBzOi8vbWlycm9yLmVtYWJsZWQuY29tLyJdLCJjb25zZW50X2VuZHBvaW50IjoiaHR0cHM6Ly9jb25zZW50LmVtYWJsZWQuY29tL2F1dGhvcml6ZSIsImlzc3VhbmNlX3Byb2ZpbGVzX3N1cHBvcnRlZCI6WyJvaWRjX2hvc3RlZF9jb25zZW50Il0sImlzc3VlZF9hdCI6IjIwMjYtMDgtMDVUMTQ6MDE6MDBaIiwiaXNzdWVyIjoiaHR0cHM6Ly9pc3N1ZXIuZW1hYmxlZC5jb20iLCJpc3N1ZXJfaWQiOiJ1cm46eGNpbTppc3N1ZXI6ZW1hYmxlZC5jb20iLCJqd2tzX3VyaSI6Imh0dHBzOi8vaXNzdWVyLmVtYWJsZWQuY29tLy53ZWxsLWtub3duL3hjaW0ta2V5cy5qc29uIiwibWV0YWRhdGFfZXBvY2giOjEsIm9iamVjdF90eXBlIjoiaXNzdWVyX21ldGFkYXRhIiwicG9saWN5X3VyaSI6Imh0dHBzOi8vaXNzdWVyLmVtYWJsZWQuY29tL2lzc3VhbmNlLXBvbGljeSIsInJldm9jYXRpb25fZW5kcG9pbnQiOiJodHRwczovL3Jldm9rZS5lbWFibGVkLmNvbS8iLCJzZWN1cml0eV9jb250YWN0IjoibWFpbHRvOnNlY3VyaXR5QGVtYWJsZWQuY29tIiwic3RhdHVzX2VuZHBvaW50IjoiaHR0cHM6Ly9pc3N1ZXIuZW1hYmxlZC5jb20vdjEveGNpbS9zdGF0dXMiLCJzdXBwb3J0ZWRfaWRlbnRpdHlfYXNzdXJhbmNlIjpbIm9pZGNfcHJvdmlkZXJfYXV0aGVudGljYXRlZCJdLCJ0cmFuc3BhcmVuY3lfbG9nIjoiaHR0cHM6Ly9sb2cuZW1hYmxlZC5jb20vIiwidmFsaWRfZnJvbSI6IjIwMjYtMDgtMDVUMTQ6MDE6MDBaIiwidmFsaWRfdW50aWwiOiIyMDI3LTA4LTA1VDE0OjAwOjAwWiIsInhjaW1fdmVyc2lvbiI6IjAuMSIsInhjaW1fdmVyc2lvbnMiOlsiMC4xIl19",
+    "protected": "eyJhbGciOiJFZERTQSIsImtpZCI6ImVtYWJsZWQtaXNzdWVyLXRlc3QtMDEiLCJ0eXAiOiJhcHBsaWNhdGlvbi94Y2ltLWlzc3Vlci1tZXRhZGF0YStqY3MifQ",
+    "signature": "kLkvyuPhrzwIndvTluPLFOrq9MhXf-5XdF9FR0ZSW6xAhIrCwCfdAqFndHnIr5SU3sr_Ku2gnwuTZnIPs8SAAQ"
+  },
+  "issuer_public_key_raw_base64url": "JUO5L_EJVRFHatyDadtt3JM2ZaEZeN2hQE7hBmypVZ0",
+  "registry_public_key_raw_base64url": "Kay64UG8yvCyLhqU000LxzYeUm0L_hLIl5S8kyKWbdc",
+  "vector_id": "xcim-0.1-issuer-trust-chain-01"
+}

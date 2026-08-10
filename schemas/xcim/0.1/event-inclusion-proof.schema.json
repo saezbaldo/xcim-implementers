@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/event-inclusion-proof.schema.json",
+  "title": "XCIM 0.1 Event Inclusion Proof",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["batch_sequence", "leaf_index", "tree_size", "path", "event_root"],
+  "properties": {
+    "batch_sequence": { "$ref": "#/$defs/nonnegative" },
+    "leaf_index": { "$ref": "#/$defs/nonnegative" },
+    "tree_size": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "path": {
+      "type": "array", "maxItems": 256,
+      "description": "Sibling hashes ordered leaf-to-root.",
+      "items": { "$ref": "#/$defs/hash" }
+    },
+    "event_root": { "$ref": "#/$defs/hash" }
+  },
+  "$defs": {
+    "nonnegative": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "hash": { "type": "string", "minLength": 43, "maxLength": 43, "pattern": "^[A-Za-z0-9_-]+$" }
+  }
+}

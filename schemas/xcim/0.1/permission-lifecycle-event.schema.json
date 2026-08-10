@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/permission-lifecycle-event.schema.json",
+  "title": "XCIM 0.1 Permission Lifecycle Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xcim_version", "object_type", "event_id", "permission_id", "transition", "status_epoch", "effective_at"],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "permission_lifecycle_event" },
+    "event_id": { "type": "string", "pattern": "^urn:xcim:event:[A-Za-z0-9._~-]+$" },
+    "permission_id": { "type": "string", "pattern": "^urn:xcim:permission:[A-Za-z0-9._~-]+$" },
+    "transition": { "type": "string", "enum": ["revoked", "expired"] },
+    "status_epoch": { "type": "integer", "minimum": 2, "maximum": 9007199254740991 },
+    "effective_at": { "type": "string", "format": "date-time" }
+  }
+}

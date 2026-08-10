@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/issuer-accreditation.schema.json",
+  "title": "XCIM 0.1 Issuer Accreditation Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "xcim_version", "object_type", "registry", "accreditation_id", "accreditation_epoch",
+    "issuer_id", "status", "assurance_level", "policy_version", "reviewed_at", "valid_from",
+    "valid_until", "issuer_key_commitments", "review_evidence_commitment", "previous_entry_commitment"
+  ],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "issuer_accreditation" },
+    "registry": { "const": "https://registry.xcim.net" },
+    "accreditation_id": { "type": "string", "pattern": "^urn:xcim:accreditation:[A-Za-z0-9._~-]+$" },
+    "accreditation_epoch": { "$ref": "#/$defs/positive" },
+    "issuer_id": { "type": "string", "pattern": "^urn:xcim:issuer:[A-Za-z0-9._~:-]+$" },
+    "status": { "enum": ["pending", "active", "suspended", "revoked", "expired"] },
+    "assurance_level": { "enum": ["organization_reviewed", "organization_and_controllers_reviewed", "enhanced_operational_review"] },
+    "policy_version": { "type": "string", "pattern": "^xcim-issuer-policy-[0-9]+\\.[0-9]+$" },
+    "reviewed_at": { "$ref": "#/$defs/dateTime" },
+    "valid_from": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+    "valid_until": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+    "issuer_key_commitments": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/hash" } },
+    "review_evidence_commitment": { "$ref": "#/$defs/hash" },
+    "previous_entry_commitment": { "oneOf": [{ "$ref": "#/$defs/hash" }, { "type": "null" }] },
+    "status_reason_code": { "type": "string", "pattern": "^[a-z][a-z0-9_.-]*$" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "pending" } }, "required": ["status"] },
+      "then": { "properties": { "valid_from": { "type": "null" }, "valid_until": { "type": "null" } } },
+      "else": { "properties": { "valid_from": { "$ref": "#/$defs/dateTime" }, "valid_until": { "$ref": "#/$defs/dateTime" } } }
+    }
+  ],
+  "$defs": {
+    "positive": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "hash": { "type": "string", "minLength": 43, "maxLength": 43, "pattern": "^[A-Za-z0-9_-]+$" }
+  }
+}

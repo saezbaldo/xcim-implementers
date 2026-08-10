@@ -1,0 +1,18 @@
+{
+  "registry_id": "xcim-media-types",
+  "registry_version": "0.1",
+  "types": [
+    { "media_type": "application/xcim-receipt+jcs", "object_type": "xcim_receipt", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-consent-manifest+jcs", "object_type": "consent_manifest", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-transparency-event+jcs", "object_type": "transparency_event", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-batch-manifest+jcs", "object_type": "batch_manifest", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-proof-bundle+json", "object_type": "xcim_proof_bundle", "serialization": "JSON" },
+    { "media_type": "application/xcim-issuer-metadata+jcs", "object_type": "issuer_metadata", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-issuer-accreditation+jcs", "object_type": "issuer_accreditation", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-exchange-challenge+jcs", "object_type": "exchange_endpoint_challenge", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-exchange-challenge-response+jcs", "object_type": "exchange_endpoint_challenge_response", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-domain-binding+jcs", "object_type": "domain_binding", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-application-registration+jcs", "object_type": "application_registration", "serialization": "JWS Flattened JSON Serialization" },
+    { "media_type": "application/xcim-application-key+jcs", "object_type": "application_key", "serialization": "JWS Flattened JSON Serialization" }
+  ]
+}

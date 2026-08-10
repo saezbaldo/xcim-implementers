@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.xcim.org/0.1/permission-revocation.schema.json",
+  "title": "XCIM Permission Revocation Payload 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "xcim_version", "object_type", "revocation_id", "issuer", "receipt_id",
+    "permission_id", "purpose_id", "scope", "method", "reason_code",
+    "requested_at", "effective_at", "status_epoch"
+  ],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "permission_revocation" },
+    "revocation_id": { "type": "string", "pattern": "^xrv_[A-Za-z0-9_-]{43}$" },
+    "issuer": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "receipt_id": { "type": "string", "pattern": "^urn:xcim:receipt:[A-Za-z0-9._~-]+$" },
+    "permission_id": { "type": "string", "pattern": "^urn:xcim:permission:[A-Za-z0-9._~-]+$" },
+    "purpose_id": { "type": "string", "minLength": 1, "maxLength": 255 },
+    "scope": { "const": "permission" },
+    "method": { "enum": ["rfc8058_one_click", "issuer_dashboard", "vendor_preference_center", "esp_feedback", "account_closed", "relationship_expired", "issuer_enforcement", "administrative_request"] },
+    "reason_code": { "type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$" },
+    "requested_at": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" },
+    "effective_at": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" },
+    "status_epoch": { "type": "integer", "minimum": 2, "maximum": 9007199254740991 }
+  }
+}

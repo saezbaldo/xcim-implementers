@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/domain-binding.schema.json",
+  "title": "XCIM 0.1 Domain Binding Registry Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "xcim_version", "object_type", "binding_id", "app_id", "app_epoch", "domain", "roles",
+    "domain_epoch", "valid_from", "valid_until", "app_key_id", "dns_proof_commitment", "status",
+    "activated_at", "renewal_of_binding_id"
+  ],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "domain_binding" },
+    "binding_id": { "type": "string", "pattern": "^xdb_[A-Za-z0-9_-]{8,63}$" },
+    "app_id": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~:-]+$" },
+    "app_epoch": { "$ref": "#/$defs/positive" },
+    "domain": { "type": "string", "format": "hostname", "maxLength": 253 },
+    "roles": {
+      "type": "array", "minItems": 1, "maxItems": 6, "uniqueItems": true,
+      "items": { "enum": ["organizational", "rfc5322_from", "dkim_signing", "envelope_from", "link_domain", "consent_presentation_delegate"] }
+    },
+    "domain_epoch": { "$ref": "#/$defs/positive" },
+    "valid_from": { "$ref": "#/$defs/dateTime" },
+    "valid_until": { "$ref": "#/$defs/dateTime" },
+    "app_key_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "dns_proof_commitment": { "type": "string", "pattern": "^[A-Za-z0-9_-]{43}$" },
+    "status": { "const": "active" },
+    "activated_at": { "$ref": "#/$defs/dateTime" },
+    "renewal_of_binding_id": {
+      "oneOf": [
+        { "type": "string", "pattern": "^xdb_[A-Za-z0-9_-]{8,63}$" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "$defs": {
+    "positive": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "dateTime": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/consent-manifest.schema.json",
+  "title": "XCIM 0.1 Consent Manifest Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "xcim_version",
+    "object_type",
+    "manifest_id",
+    "app_id",
+    "app_epoch",
+    "version",
+    "display_name",
+    "purposes",
+    "declared_sender_domains",
+    "privacy_policy",
+    "locales",
+    "effective_from",
+    "vendor_app_key_id",
+    "vendor_signature"
+  ],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "consent_manifest" },
+    "manifest_id": { "$ref": "#/$defs/manifestId" },
+    "app_id": { "$ref": "#/$defs/appId" },
+    "app_epoch": { "$ref": "#/$defs/positiveEpoch" },
+    "version": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "display_name": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "localization_profile": { "const": "xcim-locales-0.1" },
+    "default_locale": { "$ref": "#/$defs/locale" },
+    "legal_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "verification"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "verification": { "type": "string", "enum": ["not_verified", "optional_verified", "entity_verified"] }
+      }
+    },
+    "purposes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": { "$ref": "#/$defs/purpose" }
+    },
+    "declared_sender_domains": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/domain" }
+    },
+    "privacy_policy": { "$ref": "#/$defs/httpsUri" },
+    "terms": { "$ref": "#/$defs/httpsUri" },
+    "locales": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/locale" },
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "object", "maxProperties": 0 },
+          { "$ref": "#/$defs/localizedManifest" }
+        ]
+      }
+    },
+    "effective_from": { "$ref": "#/$defs/dateTime" },
+    "vendor_app_key_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "vendor_signature": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "manifestId": { "type": "string", "pattern": "^urn:xcim:manifest:[A-Za-z0-9._~-]+$" },
+    "appId": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~-]+$" },
+    "positiveEpoch": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "httpsUri": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "domain": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 253,
+      "pattern": "^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)*[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$"
+    },
+    "purpose": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["purpose_id", "authorization_kind", "required", "title", "description"],
+      "properties": {
+        "purpose_id": { "type": "string", "pattern": "^(?:[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*|x-[a-z0-9][a-z0-9._-]*)$", "maxLength": 128 },
+        "authorization_kind": { "type": "string", "enum": ["explicit_consent", "transaction_relationship", "service_acknowledgement", "preference"] },
+        "required": { "type": "boolean" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "expected_frequency": {
+          "oneOf": [
+            { "type": "string", "minLength": 1, "maxLength": 100 },
+            { "$ref": "#/$defs/frequency" }
+          ]
+        }
+      }
+    },
+    "locale": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(?:-[A-Z][a-z]{3})?(?:-(?:[A-Z]{2}|[0-9]{3}))?$",
+      "maxLength": 35
+    },
+    "frequency": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind"],
+          "properties": { "kind": { "const": "event_driven" } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "maximum", "period"],
+          "properties": {
+            "kind": { "const": "up_to_per_period" },
+            "maximum": { "type": "integer", "minimum": 1, "maximum": 1000 },
+            "period": { "type": "string", "enum": ["day", "week", "month", "year"] }
+          }
+        }
+      ]
+    },
+    "localizedManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display_name", "purposes"],
+      "properties": {
+        "display_name": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "purposes": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 64,
+          "propertyNames": { "$ref": "#/$defs/purposeId" },
+          "additionalProperties": { "$ref": "#/$defs/localizedPurpose" }
+        }
+      }
+    },
+    "localizedPurpose": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "description", "expected_frequency_label"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "expected_frequency_label": { "type": "string", "minLength": 1, "maxLength": 200 }
+      }
+    },
+    "purposeId": {
+      "type": "string",
+      "pattern": "^(?:[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*|x-[a-z0-9][a-z0-9._-]*)$",
+      "maxLength": 128
+    }
+  },
+  "allOf": [
+    {
+      "if": { "required": ["localization_profile"] },
+      "then": { "required": ["default_locale"] }
+    }
+  ]
+}

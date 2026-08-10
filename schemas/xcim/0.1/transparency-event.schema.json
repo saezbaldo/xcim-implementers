@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/transparency-event.schema.json",
+  "title": "XCIM 0.1 Transparency Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xcim_version", "object_type", "event_id", "event_type", "issuer_id", "object_commitment", "created_at", "sequence_number"],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "transparency_event" },
+    "event_id": { "type": "string", "pattern": "^urn:xcim:event:[A-Za-z0-9._~-]+$" },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "protocol_genesis", "issuer_key_registered", "issuer_key_rotated", "issuer_suspended",
+        "issuer_accreditation_applied", "issuer_accreditation_activated", "issuer_accreditation_suspended",
+        "issuer_accreditation_revoked", "issuer_accreditation_expired", "issuer_accreditation_renewed",
+        "app_registered", "app_key_registered", "app_key_rotated", "app_transferred",
+        "oauth_binding_created", "oauth_binding_suspended",
+        "domain_epoch_started", "domain_epoch_expired", "domain_epoch_suspended",
+        "manifest_published", "receipt_issued", "permission_revoked", "permission_expired",
+        "permission_regranted", "batch_mirror_published"
+      ]
+    },
+    "issuer_id": { "type": "string", "pattern": "^urn:xcim:issuer:[A-Za-z0-9._~:-]+$" },
+    "object_commitment": { "$ref": "#/$defs/hash" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "sequence_number": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 }
+  },
+  "$defs": {
+    "hash": { "type": "string", "minLength": 43, "maxLength": 43, "pattern": "^[A-Za-z0-9_-]+$" }
+  }
+}

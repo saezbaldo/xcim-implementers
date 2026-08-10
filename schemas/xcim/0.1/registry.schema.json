@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/registry.schema.json",
+  "title": "XCIM 0.1 Machine-Readable Registry",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "registry_version", "codes"],
+      "properties": {
+        "registry_id": { "const": "xcim-result-codes" },
+        "registry_version": { "const": "0.1" },
+        "codes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code", "category"],
+            "properties": {
+              "code": { "type": "string", "pattern": "^XCIM_[A-Z_]+$" },
+              "category": { "enum": ["positive", "neutral", "negative"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registry_id", "registry_version", "types"],
+      "properties": {
+        "registry_id": { "const": "xcim-media-types" },
+        "registry_version": { "const": "0.1" },
+        "types": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["media_type", "object_type", "serialization"],
+            "properties": {
+              "media_type": { "type": "string", "pattern": "^application/xcim-[a-z-]+\\+(jcs|json)$" },
+              "object_type": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+              "serialization": { "enum": ["JWS Flattened JSON Serialization", "JSON"] },
+              "status": { "enum": ["pending-D-016"] }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

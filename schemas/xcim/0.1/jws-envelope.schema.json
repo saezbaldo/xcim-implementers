@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/jws-envelope.schema.json",
+  "title": "XCIM 0.1 JWS Flattened Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protected", "payload", "signature"],
+  "properties": {
+    "protected": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "Unpadded base64url of UTF-8 JCS protected-header bytes."
+    },
+    "payload": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "Unpadded base64url of UTF-8 JCS payload bytes."
+    },
+    "signature": {
+      "type": "string",
+      "minLength": 86,
+      "maxLength": 86,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "Unpadded base64url Ed25519 signature (64 bytes)."
+    }
+  }
+}

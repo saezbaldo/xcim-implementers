@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/receipt.schema.json",
+  "title": "XCIM 0.1 Receipt Core Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "xcim_version",
+    "object_type",
+    "issuance_profile",
+    "receipt_id",
+    "issuer",
+    "issued_at",
+    "not_before",
+    "expires_at",
+    "application",
+    "recipient",
+    "identity_evidence",
+    "presentation",
+    "issuer_independence",
+    "permissions",
+    "declared_sender_domains"
+  ],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "xcim_receipt" },
+    "issuance_profile": { "const": "oidc_hosted_consent" },
+    "receipt_id": { "type": "string", "pattern": "^urn:xcim:receipt:[A-Za-z0-9._~-]+$" },
+    "issuer": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "issued_at": { "$ref": "#/$defs/dateTime" },
+    "not_before": { "$ref": "#/$defs/dateTime" },
+    "expires_at": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+    "application": { "$ref": "#/$defs/application" },
+    "recipient": { "$ref": "#/$defs/recipient" },
+    "identity_evidence": { "$ref": "#/$defs/identityEvidence" },
+    "presentation": { "$ref": "#/$defs/presentation" },
+    "issuer_independence": { "type": "string", "enum": ["independent", "organizationally_separated", "vendor_controlled", "unknown"] },
+    "permissions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": { "$ref": "#/$defs/permission" }
+    },
+    "declared_sender_domains": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/domain" }
+    },
+    "vendor_assertions": {
+      "type": "object",
+      "description": "Clearly vendor-asserted metadata; never issuer-observed evidence."
+    }
+  },
+  "$defs": {
+    "dateTime": { "type": "string", "format": "date-time" },
+    "epoch": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "base64url": { "type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9_-]+$" },
+    "domain": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 253,
+      "pattern": "^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)*[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$"
+    },
+    "application": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["app_id", "app_epoch", "app_key_id", "oauth_binding_id", "provider_issuer", "client_id_commitment"],
+      "properties": {
+        "app_id": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~-]+$" },
+        "app_epoch": { "$ref": "#/$defs/epoch" },
+        "app_key_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "oauth_binding_id": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "provider_issuer": { "type": "string", "format": "uri" },
+        "client_id_commitment": { "$ref": "#/$defs/base64url" }
+      }
+    },
+    "recipient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pairwise_id", "identity_assurance"],
+      "properties": {
+        "pairwise_id": { "$ref": "#/$defs/base64url" },
+        "identity_assurance": { "const": "oidc_provider_authenticated" }
+      }
+    },
+    "identityEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_type", "provider_subject_commitment", "oauth_client_id_commitment", "provider_policy_version", "address_authority_class", "authenticated_at", "nonce_commitment", "adapter_version"],
+      "properties": {
+        "evidence_type": { "const": "oidc_id_token" },
+        "provider_subject_commitment": { "$ref": "#/$defs/base64url" },
+        "oauth_client_id_commitment": { "$ref": "#/$defs/base64url" },
+        "provider_policy_version": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "address_authority_class": { "type": "string", "enum": ["provider_authoritative", "provider_verified", "provider_relay"] },
+        "authenticated_at": { "$ref": "#/$defs/dateTime" },
+        "nonce_commitment": { "$ref": "#/$defs/base64url" },
+        "adapter_version": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "comparison_rule_id": { "type": "string", "minLength": 1, "maxLength": 100 }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "origin", "manifest_id", "manifest_hash", "locale", "rendering_template_version", "accepted_at"],
+      "properties": {
+        "mode": { "const": "issuer_hosted_top_level" },
+        "origin": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "manifest_id": { "type": "string", "pattern": "^urn:xcim:manifest:[A-Za-z0-9._~-]+$" },
+        "manifest_hash": { "$ref": "#/$defs/base64url" },
+        "locale": { "type": "string", "minLength": 2, "maxLength": 35 },
+        "rendering_template_version": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "accepted_at": { "$ref": "#/$defs/dateTime" }
+      }
+    },
+    "permission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["permission_id", "purpose_id", "authorization_kind", "decision", "required", "granted_at", "expires_at"],
+      "properties": {
+        "permission_id": { "type": "string", "pattern": "^urn:xcim:permission:[A-Za-z0-9._~-]+$" },
+        "purpose_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "authorization_kind": { "type": "string", "enum": ["explicit_consent", "transaction_relationship", "service_acknowledgement", "preference"] },
+        "decision": { "type": "string", "enum": ["active", "declined"] },
+        "required": { "type": "boolean" },
+        "granted_at": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] },
+        "expires_at": { "oneOf": [{ "$ref": "#/$defs/dateTime" }, { "type": "null" }] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "decision": { "const": "active" } }, "required": ["decision"] },
+          "then": { "properties": { "granted_at": { "$ref": "#/$defs/dateTime" } } },
+          "else": { "properties": { "granted_at": { "type": "null" } } }
+        }
+      ]
+    }
+  }
+}

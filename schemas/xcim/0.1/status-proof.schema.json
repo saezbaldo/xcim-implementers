@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/status-proof.schema.json",
+  "title": "XCIM 0.1 Compressed Sparse-Merkle Status Proof",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "state_key", "presence", "state_value", "tree_depth", "sibling_bitmap",
+    "non_empty_siblings", "state_root", "batch_sequence", "this_update", "next_update", "anchor_reference"
+  ],
+  "properties": {
+    "state_key": { "$ref": "#/$defs/hash" },
+    "presence": { "type": "boolean" },
+    "state_value": {
+      "oneOf": [
+        { "$ref": "state-value.schema.json" },
+        { "type": "null" }
+      ]
+    },
+    "tree_depth": { "const": 256 },
+    "sibling_bitmap": {
+      "type": "string",
+      "minLength": 43,
+      "maxLength": 43,
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "Unpadded base64url encoding of exactly 32 bitmap bytes."
+    },
+    "non_empty_siblings": {
+      "type": "array",
+      "maxItems": 256,
+      "items": { "$ref": "#/$defs/hash" }
+    },
+    "state_root": { "$ref": "#/$defs/hash" },
+    "batch_sequence": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "this_update": { "type": "string", "format": "date-time" },
+    "next_update": { "type": "string", "format": "date-time" },
+    "anchor_reference": { "type": "string", "minLength": 1, "maxLength": 500 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "presence": { "const": true } }, "required": ["presence"] },
+      "then": { "properties": { "state_value": { "$ref": "state-value.schema.json" } } },
+      "else": { "properties": { "state_value": { "type": "null" } } }
+    }
+  ],
+  "$defs": {
+    "hash": { "type": "string", "minLength": 43, "maxLength": 43, "pattern": "^[A-Za-z0-9_-]+$" }
+  }
+}

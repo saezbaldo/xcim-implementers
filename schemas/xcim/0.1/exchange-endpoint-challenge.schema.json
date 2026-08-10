@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/exchange-endpoint-challenge.schema.json",
+  "title": "XCIM 0.1 Exchange Endpoint Challenge Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xcim_version", "object_type", "challenge_id", "endpoint_id", "application_id", "application_epoch", "endpoint_uri", "audience", "token", "issued_at", "expires_at"],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "exchange_endpoint_challenge" },
+    "challenge_id": { "type": "string", "pattern": "^xec_[A-Za-z0-9._~-]{8,63}$" },
+    "endpoint_id": { "type": "string", "pattern": "^oxe_[A-Za-z0-9._~-]{8,63}$" },
+    "application_id": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~-]+$", "maxLength": 67 },
+    "application_epoch": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "endpoint_uri": { "type": "string", "format": "uri", "pattern": "^https://", "maxLength": 2048 },
+    "audience": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~-]+$", "maxLength": 67 },
+    "token": { "type": "string", "minLength": 43, "maxLength": 43, "pattern": "^[A-Za-z0-9_-]+$" },
+    "issued_at": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" },
+    "expires_at": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" }
+  }
+}

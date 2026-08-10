@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/state-value.schema.json",
+  "title": "XCIM 0.1 Current-State Value",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_id", "status", "status_epoch", "effective_at", "latest_event_commitment"],
+  "properties": {
+    "object_id": { "type": "string", "pattern": "^urn:xcim:[a-z][a-z0-9_-]*:[A-Za-z0-9._~-]+$" },
+    "status": { "type": "string", "enum": ["active", "declined", "revoked", "expired", "suspended", "erased"] },
+    "status_epoch": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "effective_at": { "type": "string", "format": "date-time" },
+    "latest_event_commitment": { "$ref": "#/$defs/hash" }
+  },
+  "$defs": {
+    "hash": { "type": "string", "minLength": 43, "maxLength": 43, "pattern": "^[A-Za-z0-9_-]+$" }
+  }
+}

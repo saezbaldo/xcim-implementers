@@ -1,0 +1,420 @@
+{
+  "consistency_proofs": [
+    {
+      "new_root": "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M",
+      "new_tree_size": 1,
+      "old_root": "8ufHxA7bAfPrXHXX5vsdbOUbd1RJJSwz3OfVRHIdDiQ",
+      "old_tree_size": 0,
+      "path": []
+    },
+    {
+      "new_root": "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY",
+      "new_tree_size": 2,
+      "old_root": "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M",
+      "old_tree_size": 1,
+      "path": [
+        "q0xYxAwcKaR55_xU0c2zJ6BHL0CRscC0L1uU23ID41E"
+      ]
+    },
+    {
+      "new_root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "new_tree_size": 3,
+      "old_root": "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY",
+      "old_tree_size": 2,
+      "path": [
+        "Fj-yrxRjw9NmBkyreAmFzUIUpYka4EUUa2sRlqf_BYw"
+      ]
+    },
+    {
+      "new_root": "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+      "new_tree_size": 4,
+      "old_root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "old_tree_size": 3,
+      "path": [
+        "Fj-yrxRjw9NmBkyreAmFzUIUpYka4EUUa2sRlqf_BYw",
+        "t29w_yEWYa_Q8A93L-PozLVyOtBfhJH7ALpC9TW024Q",
+        "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY"
+      ]
+    },
+    {
+      "new_root": "skNBPkrzDFb_vi0lCTiCGwjMfguw1nAJWOc6qSzVJMo",
+      "new_tree_size": 5,
+      "old_root": "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+      "old_tree_size": 4,
+      "path": [
+        "s9TsJ7g7xEROrbdkT2nQr4eEJfpnIhiERFCl3YqeHjo"
+      ]
+    },
+    {
+      "new_root": "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM",
+      "new_tree_size": 8,
+      "old_root": "skNBPkrzDFb_vi0lCTiCGwjMfguw1nAJWOc6qSzVJMo",
+      "old_tree_size": 5,
+      "path": [
+        "s9TsJ7g7xEROrbdkT2nQr4eEJfpnIhiERFCl3YqeHjo",
+        "TzCzxYcP6wItaoAXwE-guBs3Rg-W1DYfePAcLI6V3zY",
+        "RrPGLAr2aboMm-XHYLXljEms0yZaSHbcFKgRUvGDgOQ",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ"
+      ]
+    },
+    {
+      "new_root": "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM",
+      "new_tree_size": 8,
+      "old_root": "d-scAlaOofOrMlC0lR5_aFu0qjCp-L1M98O1WXLCUIw",
+      "old_tree_size": 7,
+      "path": [
+        "8kjy-LiQmn3cm9o_N9avr1BKlZSljam4BByyWT5XiRQ",
+        "PFX5lWUe4PW3gEzcHdIATqQbH29i4PhMf5jHjF5f5-A",
+        "WCGzv3qQ80-qENYeL_dCetvIQbKT4_hAjVk3dYVa2nM",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ"
+      ]
+    },
+    {
+      "new_root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "new_tree_size": 9,
+      "old_root": "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM",
+      "old_tree_size": 8,
+      "path": [
+        "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA"
+      ]
+    }
+  ],
+  "description": "XCIM 0.1 RFC6962-shaped cumulative event tree using XCIM domain separators.",
+  "events": [
+    {
+      "created_at": "2026-08-05T12:00:00Z",
+      "event_id": "urn:xcim:event:test-01",
+      "event_type": "protocol_genesis",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE",
+      "object_type": "transparency_event",
+      "sequence_number": 1,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:01:00Z",
+      "event_id": "urn:xcim:event:test-02",
+      "event_type": "issuer_key_registered",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+      "object_type": "transparency_event",
+      "sequence_number": 2,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:02:00Z",
+      "event_id": "urn:xcim:event:test-03",
+      "event_type": "app_registered",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM",
+      "object_type": "transparency_event",
+      "sequence_number": 3,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:03:00Z",
+      "event_id": "urn:xcim:event:test-04",
+      "event_type": "app_key_registered",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ",
+      "object_type": "transparency_event",
+      "sequence_number": 4,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:04:00Z",
+      "event_id": "urn:xcim:event:test-05",
+      "event_type": "oauth_binding_created",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "BQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU",
+      "object_type": "transparency_event",
+      "sequence_number": 5,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:05:00Z",
+      "event_id": "urn:xcim:event:test-06",
+      "event_type": "domain_epoch_started",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "BgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgY",
+      "object_type": "transparency_event",
+      "sequence_number": 6,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:06:00Z",
+      "event_id": "urn:xcim:event:test-07",
+      "event_type": "manifest_published",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "BwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwc",
+      "object_type": "transparency_event",
+      "sequence_number": 7,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:07:00Z",
+      "event_id": "urn:xcim:event:test-08",
+      "event_type": "receipt_issued",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "xqukwVTsDBWlpkWUuEep18XRi1NtfIGa5-ukbW_Gj6A",
+      "object_type": "transparency_event",
+      "sequence_number": 8,
+      "xcim_version": "0.1"
+    },
+    {
+      "created_at": "2026-08-05T12:08:00Z",
+      "event_id": "urn:xcim:event:test-09",
+      "event_type": "permission_revoked",
+      "issuer_id": "urn:xcim:issuer:emabled.com",
+      "object_commitment": "CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk",
+      "object_type": "transparency_event",
+      "sequence_number": 9,
+      "xcim_version": "0.1"
+    }
+  ],
+  "inclusion_proofs": [
+    {
+      "batch_sequence": 3,
+      "event_root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "leaf_index": 0,
+      "path": [
+        "q0xYxAwcKaR55_xU0c2zJ6BHL0CRscC0L1uU23ID41E",
+        "Fj-yrxRjw9NmBkyreAmFzUIUpYka4EUUa2sRlqf_BYw"
+      ],
+      "tree_size": 3
+    },
+    {
+      "batch_sequence": 3,
+      "event_root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "leaf_index": 1,
+      "path": [
+        "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M",
+        "Fj-yrxRjw9NmBkyreAmFzUIUpYka4EUUa2sRlqf_BYw"
+      ],
+      "tree_size": 3
+    },
+    {
+      "batch_sequence": 3,
+      "event_root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "leaf_index": 2,
+      "path": [
+        "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY"
+      ],
+      "tree_size": 3
+    },
+    {
+      "batch_sequence": 5,
+      "event_root": "skNBPkrzDFb_vi0lCTiCGwjMfguw1nAJWOc6qSzVJMo",
+      "leaf_index": 2,
+      "path": [
+        "t29w_yEWYa_Q8A93L-PozLVyOtBfhJH7ALpC9TW024Q",
+        "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY",
+        "s9TsJ7g7xEROrbdkT2nQr4eEJfpnIhiERFCl3YqeHjo"
+      ],
+      "tree_size": 5
+    },
+    {
+      "batch_sequence": 9,
+      "event_root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "leaf_index": 0,
+      "path": [
+        "q0xYxAwcKaR55_xU0c2zJ6BHL0CRscC0L1uU23ID41E",
+        "ztCqYzzBrBWhAqWh1gR7ZH6qNJjRXRRZW5QhbAWhXi4",
+        "oNiC8D8Zqw5F9VMREZm7EUYs4KXkUsdV7UHj3waA5R0",
+        "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA"
+      ],
+      "tree_size": 9
+    },
+    {
+      "batch_sequence": 9,
+      "event_root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "leaf_index": 4,
+      "path": [
+        "TzCzxYcP6wItaoAXwE-guBs3Rg-W1DYfePAcLI6V3zY",
+        "RrPGLAr2aboMm-XHYLXljEms0yZaSHbcFKgRUvGDgOQ",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+        "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA"
+      ],
+      "tree_size": 9
+    },
+    {
+      "batch_sequence": 9,
+      "event_root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "leaf_index": 7,
+      "path": [
+        "8kjy-LiQmn3cm9o_N9avr1BKlZSljam4BByyWT5XiRQ",
+        "WCGzv3qQ80-qENYeL_dCetvIQbKT4_hAjVk3dYVa2nM",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+        "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA"
+      ],
+      "tree_size": 9
+    },
+    {
+      "batch_sequence": 9,
+      "event_root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "leaf_index": 8,
+      "path": [
+        "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM"
+      ],
+      "tree_size": 9
+    }
+  ],
+  "incremental_roots": [
+    {
+      "frontier": [],
+      "root": "8ufHxA7bAfPrXHXX5vsdbOUbd1RJJSwz3OfVRHIdDiQ",
+      "tree_size": 0
+    },
+    {
+      "frontier": [
+        "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M"
+      ],
+      "root": "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M",
+      "tree_size": 1
+    },
+    {
+      "frontier": [
+        null,
+        "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY"
+      ],
+      "root": "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY",
+      "tree_size": 2
+    },
+    {
+      "frontier": [
+        "Fj-yrxRjw9NmBkyreAmFzUIUpYka4EUUa2sRlqf_BYw",
+        "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY"
+      ],
+      "root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "tree_size": 3
+    },
+    {
+      "frontier": [
+        null,
+        null,
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ"
+      ],
+      "root": "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+      "tree_size": 4
+    },
+    {
+      "frontier": [
+        "s9TsJ7g7xEROrbdkT2nQr4eEJfpnIhiERFCl3YqeHjo",
+        null,
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ"
+      ],
+      "root": "skNBPkrzDFb_vi0lCTiCGwjMfguw1nAJWOc6qSzVJMo",
+      "tree_size": 5
+    },
+    {
+      "frontier": [
+        null,
+        "WCGzv3qQ80-qENYeL_dCetvIQbKT4_hAjVk3dYVa2nM",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ"
+      ],
+      "root": "Gj3ACM0JzK_wWXkXXquZI8sL4q_LhPl8OtJZDYeGNZA",
+      "tree_size": 6
+    },
+    {
+      "frontier": [
+        "8kjy-LiQmn3cm9o_N9avr1BKlZSljam4BByyWT5XiRQ",
+        "WCGzv3qQ80-qENYeL_dCetvIQbKT4_hAjVk3dYVa2nM",
+        "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ"
+      ],
+      "root": "q1Y9a47aIx3C5mAO8uwT_ZZieTMNMKd62duGU6Nwa3o",
+      "tree_size": 7
+    },
+    {
+      "frontier": [
+        null,
+        null,
+        null,
+        "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM"
+      ],
+      "root": "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM",
+      "tree_size": 8
+    },
+    {
+      "frontier": [
+        "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA",
+        null,
+        null,
+        "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM"
+      ],
+      "root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "tree_size": 9
+    }
+  ],
+  "leaf_hashes": [
+    "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M",
+    "q0xYxAwcKaR55_xU0c2zJ6BHL0CRscC0L1uU23ID41E",
+    "Fj-yrxRjw9NmBkyreAmFzUIUpYka4EUUa2sRlqf_BYw",
+    "t29w_yEWYa_Q8A93L-PozLVyOtBfhJH7ALpC9TW024Q",
+    "s9TsJ7g7xEROrbdkT2nQr4eEJfpnIhiERFCl3YqeHjo",
+    "TzCzxYcP6wItaoAXwE-guBs3Rg-W1DYfePAcLI6V3zY",
+    "8kjy-LiQmn3cm9o_N9avr1BKlZSljam4BByyWT5XiRQ",
+    "PFX5lWUe4PW3gEzcHdIATqQbH29i4PhMf5jHjF5f5-A",
+    "A6BK7MPYMHPfEcC8i_lKUiEkqcYbqAKHMAjStU70mwA"
+  ],
+  "negative_tests": [
+    {
+      "base_inclusion_case": 0,
+      "expected": false,
+      "mutation": "flip_first_sibling_bit"
+    },
+    {
+      "base_inclusion_case": 0,
+      "expected": false,
+      "mutation": "increment_tree_size"
+    },
+    {
+      "base_inclusion_case": 0,
+      "expected": false,
+      "mutation": "leaf_index_out_of_range"
+    },
+    {
+      "base_consistency_case": 4,
+      "expected": false,
+      "mutation": "replace_old_root"
+    }
+  ],
+  "roots": [
+    {
+      "root": "8ufHxA7bAfPrXHXX5vsdbOUbd1RJJSwz3OfVRHIdDiQ",
+      "tree_size": 0
+    },
+    {
+      "root": "CpkFAN9qOpfrQhYLYwT4bSF51Xi1lXGHi9KPVk3lI9M",
+      "tree_size": 1
+    },
+    {
+      "root": "eEU1coYp7fEMkKnzTsrcaVGkOY4MmivIk4VuHx5__iY",
+      "tree_size": 2
+    },
+    {
+      "root": "aawzx9tt9Lzf_IC_wrRrZMDAo61w8zDQ9WNsv8jp4ss",
+      "tree_size": 3
+    },
+    {
+      "root": "DXnqamxzDM9SYR3-W5_1D03T4J9ZFu8zQzigeQ51phQ",
+      "tree_size": 4
+    },
+    {
+      "root": "skNBPkrzDFb_vi0lCTiCGwjMfguw1nAJWOc6qSzVJMo",
+      "tree_size": 5
+    },
+    {
+      "root": "d-scAlaOofOrMlC0lR5_aFu0qjCp-L1M98O1WXLCUIw",
+      "tree_size": 7
+    },
+    {
+      "root": "m5n0sUPPJCvFxfS62vVYmKYuBGpVahK0Ie1BbW-I5wM",
+      "tree_size": 8
+    },
+    {
+      "root": "oKSNhnGJrdPAl96v5apd8Z-25u9M6CXNQiQTihek9io",
+      "tree_size": 9
+    }
+  ],
+  "vector_id": "xcim-0.1-event-tree-01"
+}

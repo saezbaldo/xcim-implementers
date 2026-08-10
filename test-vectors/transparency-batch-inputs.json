@@ -1,0 +1,54 @@
+{
+  "valid": {
+    "xcim_version": "0.1",
+    "object_type": "transparency_batch_inputs",
+    "issuer_id": "urn:xcim:issuer:emabled.com",
+    "batch_sequence": 7,
+    "previous_anchor_hash": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE",
+    "proof_bundle_set_hash": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+    "consistency_proof_uri": "https://mirror.xcim.org/proofs/7.json",
+    "valid_until": "2026-08-08T16:00:00Z"
+  },
+  "invalid": [
+    {
+      "name": "unknown_property",
+      "value": {
+        "xcim_version": "0.1",
+        "object_type": "transparency_batch_inputs",
+        "issuer_id": "urn:xcim:issuer:emabled.com",
+        "batch_sequence": 7,
+        "previous_anchor_hash": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE",
+        "proof_bundle_set_hash": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+        "consistency_proof_uri": "https://mirror.xcim.org/proofs/7.json",
+        "valid_until": "2026-08-08T16:00:00Z",
+        "unexpected": true
+      }
+    },
+    {
+      "name": "non_https_uri",
+      "value": {
+        "xcim_version": "0.1",
+        "object_type": "transparency_batch_inputs",
+        "issuer_id": "urn:xcim:issuer:emabled.com",
+        "batch_sequence": 7,
+        "previous_anchor_hash": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE",
+        "proof_bundle_set_hash": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+        "consistency_proof_uri": "http://mirror.xcim.org/proofs/7.json",
+        "valid_until": "2026-08-08T16:00:00Z"
+      }
+    },
+    {
+      "name": "non_canonical_timestamp",
+      "value": {
+        "xcim_version": "0.1",
+        "object_type": "transparency_batch_inputs",
+        "issuer_id": "urn:xcim:issuer:emabled.com",
+        "batch_sequence": 7,
+        "previous_anchor_hash": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE",
+        "proof_bundle_set_hash": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+        "consistency_proof_uri": "https://mirror.xcim.org/proofs/7.json",
+        "valid_until": "2026-08-08T16:00:00+00:00"
+      }
+    }
+  ]
+}

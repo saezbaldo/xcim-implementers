@@ -1,0 +1,213 @@
+{
+  "description": "Valid signed XCIM 0.1 consent manifest",
+  "public_key_raw_base64url": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg",
+  "canonical_hash_base64url": "wyk-vvxS3OlfoLCaw6mblzrEIpS1QONGnwTOHaDk6-w",
+  "manifest": {
+    "xcim_version": "0.1",
+    "object_type": "consent_manifest",
+    "manifest_id": "urn:xcim:manifest:vendor-1-newsletter-v1",
+    "app_id": "urn:xcim:app:vendor-1",
+    "app_epoch": 1,
+    "version": "2026-08-v1",
+    "display_name": "Integration Vendor",
+    "legal_operator": {
+      "name": "Integration Vendor Inc.",
+      "verification": "not_verified"
+    },
+    "purposes": [
+      {
+        "purpose_id": "order.transactional",
+        "authorization_kind": "transaction_relationship",
+        "required": true,
+        "title": "Order updates",
+        "description": "Receipts, payment status, shipment and delivery notices.",
+        "expected_frequency": "event_driven"
+      },
+      {
+        "purpose_id": "marketing.newsletter",
+        "authorization_kind": "explicit_consent",
+        "required": false,
+        "title": "Newsletter",
+        "description": "Product news and selected offers.",
+        "expected_frequency": "up_to_4_per_month"
+      }
+    ],
+    "declared_sender_domains": [
+      "mail.vendor.example"
+    ],
+    "privacy_policy": "https://vendor.example/privacy",
+    "terms": "https://vendor.example/terms",
+    "locales": {
+      "en": {},
+      "es": {}
+    },
+    "effective_from": "2026-08-05T18:00:00Z",
+    "vendor_app_key_id": "app-key-test-01",
+    "vendor_signature": "vmsJ9KeiybDq-9U1yFjSoWmXgQLKKdSuejMUxD2KqX7B9f2bYvTnxkBaLtTXf8YaFDruxWt8r0tCv_KGeeeuBA"
+  },
+  "replacement_manifest": {
+    "xcim_version": "0.1",
+    "object_type": "consent_manifest",
+    "manifest_id": "urn:xcim:manifest:vendor-1-newsletter-v1",
+    "app_id": "urn:xcim:app:vendor-1",
+    "app_epoch": 1,
+    "version": "2026-08-v1",
+    "display_name": "Integration Vendor Updated Draft",
+    "legal_operator": {
+      "name": "Integration Vendor Inc.",
+      "verification": "not_verified"
+    },
+    "purposes": [
+      {
+        "purpose_id": "order.transactional",
+        "authorization_kind": "transaction_relationship",
+        "required": true,
+        "title": "Order updates",
+        "description": "Receipts, payment status, shipment and delivery notices.",
+        "expected_frequency": "event_driven"
+      },
+      {
+        "purpose_id": "marketing.newsletter",
+        "authorization_kind": "explicit_consent",
+        "required": false,
+        "title": "Newsletter",
+        "description": "Product news and selected offers.",
+        "expected_frequency": "up_to_4_per_month"
+      }
+    ],
+    "declared_sender_domains": [
+      "mail.vendor.example"
+    ],
+    "privacy_policy": "https://vendor.example/privacy",
+    "terms": "https://vendor.example/terms",
+    "locales": {
+      "en": {},
+      "es": {}
+    },
+    "effective_from": "2026-08-05T18:00:00Z",
+    "vendor_app_key_id": "app-key-test-01",
+    "vendor_signature": "DzLb23lStJ-MbAg9sGjePIOmh3U5eopXkWdAKkp6U45dVoDJZ-sq0KWtt87_DmthYk21BdKitFoYBEOZpi4nBQ"
+  },
+  "session_manifest": {
+    "xcim_version": "0.1",
+    "object_type": "consent_manifest",
+    "manifest_id": "urn:xcim:manifest:vendor-1-session-v1",
+    "app_id": "urn:xcim:app:vendor-1",
+    "app_epoch": 1,
+    "version": "2026-08-session-v1",
+    "display_name": "Integration Vendor",
+    "legal_operator": {
+      "name": "Integration Vendor Inc.",
+      "verification": "not_verified"
+    },
+    "purposes": [
+      {
+        "purpose_id": "order.transactional",
+        "authorization_kind": "transaction_relationship",
+        "required": true,
+        "title": "Order updates",
+        "description": "Receipts, payment status, shipment and delivery notices.",
+        "expected_frequency": "event_driven"
+      },
+      {
+        "purpose_id": "marketing.newsletter",
+        "authorization_kind": "explicit_consent",
+        "required": false,
+        "title": "Newsletter",
+        "description": "Product news and selected offers.",
+        "expected_frequency": "up_to_4_per_month"
+      }
+    ],
+    "declared_sender_domains": [
+      "mail.vendor.example"
+    ],
+    "privacy_policy": "https://vendor.example/privacy",
+    "terms": "https://vendor.example/terms",
+    "locales": {
+      "en": {},
+      "es": {}
+    },
+    "effective_from": "2026-08-05T18:00:00Z",
+    "vendor_app_key_id": "app-key-test-01",
+    "vendor_signature": "5wsh1fEhdGIDTyTtZ_i8fJvbsHAD7pXAAvZzLYHJy3_l19s0-7zz7zxBiu3CpKjfBhjAFY9ypSF-QqmQ0fWAAA"
+  },
+  "localized_manifest": {
+    "xcim_version": "0.1",
+    "object_type": "consent_manifest",
+    "manifest_id": "urn:xcim:manifest:vendor-1-newsletter-v3",
+    "app_id": "urn:xcim:app:vendor-1",
+    "app_epoch": 1,
+    "version": "2026-08-v3",
+    "display_name": "Integration Vendor",
+    "localization_profile": "xcim-locales-0.1",
+    "default_locale": "en",
+    "legal_operator": {
+      "name": "Integration Vendor Inc.",
+      "verification": "not_verified"
+    },
+    "purposes": [
+      {
+        "purpose_id": "order.transactional",
+        "authorization_kind": "transaction_relationship",
+        "required": true,
+        "title": "Order updates",
+        "description": "Receipts, payment status, shipment and delivery notices.",
+        "expected_frequency": {
+          "kind": "event_driven"
+        }
+      },
+      {
+        "purpose_id": "marketing.newsletter",
+        "authorization_kind": "explicit_consent",
+        "required": false,
+        "title": "Newsletter",
+        "description": "Product news and selected offers.",
+        "expected_frequency": {
+          "kind": "up_to_per_period",
+          "maximum": 4,
+          "period": "month"
+        }
+      }
+    ],
+    "declared_sender_domains": [
+      "mail.vendor.example"
+    ],
+    "privacy_policy": "https://vendor.example/privacy",
+    "terms": "https://vendor.example/terms",
+    "locales": {
+      "en": {
+        "display_name": "Integration Vendor",
+        "purposes": {
+          "order.transactional": {
+            "title": "Order updates",
+            "description": "Receipts, payment status, shipment and delivery notices.",
+            "expected_frequency_label": "When order events occur"
+          },
+          "marketing.newsletter": {
+            "title": "Newsletter",
+            "description": "Product news and selected offers.",
+            "expected_frequency_label": "Up to 4 emails per month"
+          }
+        }
+      },
+      "es": {
+        "display_name": "Proveedor de integración",
+        "purposes": {
+          "order.transactional": {
+            "title": "Actualizaciones del pedido",
+            "description": "Recibos, estado del pago, envío y avisos de entrega.",
+            "expected_frequency_label": "Cuando ocurran eventos del pedido"
+          },
+          "marketing.newsletter": {
+            "title": "Boletín",
+            "description": "Noticias del producto y ofertas seleccionadas.",
+            "expected_frequency_label": "Hasta 4 correos por mes"
+          }
+        }
+      }
+    },
+    "effective_from": "2026-08-05T18:00:00Z",
+    "vendor_app_key_id": "app-key-test-01",
+    "vendor_signature": "lyRrdo4z1uddfhcliOXEqHYBsfFY7HTXCwa_Rd8Vv_gOCtok8b6jw_FxQIx4Ub0Pkv7DxmThRGk-sfiSVJMKBQ"
+  }
+}

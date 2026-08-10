@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcim.org/schemas/0.1/application-registration.schema.json",
+  "title": "XCIM 0.1 Application Registration Registry Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xcim_version", "object_type", "app_id", "app_epoch", "publication_version", "display_name",
+    "homepage", "privacy_policy", "app_key_ids", "legal_operator", "issuer", "registered_at", "published_at", "status"],
+  "properties": {
+    "xcim_version": { "const": "0.1" },
+    "object_type": { "const": "application_registration" },
+    "app_id": { "type": "string", "pattern": "^urn:xcim:app:[A-Za-z0-9._~:-]+$" },
+    "app_epoch": { "$ref": "#/$defs/positive" },
+    "publication_version": { "$ref": "#/$defs/positive" },
+    "display_name": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "homepage": { "$ref": "#/$defs/httpsUri" },
+    "privacy_policy": { "$ref": "#/$defs/httpsUri" },
+    "app_key_ids": { "type": "array", "minItems": 1, "maxItems": 32, "uniqueItems": true,
+      "items": { "$ref": "#/$defs/keyId" } },
+    "legal_operator": {
+      "type": "object", "additionalProperties": false, "required": ["name", "verification"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "verification": { "enum": ["not_verified", "verified"] }
+      }
+    },
+    "issuer": { "$ref": "#/$defs/httpsUri" },
+    "registered_at": { "$ref": "#/$defs/dateTime" },
+    "published_at": { "$ref": "#/$defs/dateTime" },
+    "status": { "const": "active" }
+  },
+  "$defs": {
+    "positive": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "keyId": { "type": "string", "pattern": "^[A-Za-z0-9_.#:-]{1,200}$" },
+    "httpsUri": { "type": "string", "format": "uri", "pattern": "^https://", "maxLength": 2048 },
+    "dateTime": { "type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,7})?Z$" }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "vector_id": "xcim-0.1-message-recipient-binding-01",
+  "canonical_envelope_recipient": "User+Tag@gmail.com",
+  "salt_base64url": "AQIDBAUGBwgJCgsMDQ4PEA",
+  "digest_base64url": "kBOxn8cfjtcjNBmT2tlmVjr6wPtzdI3qlq_gGy49ldA"
+}
