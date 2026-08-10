@@ -20,7 +20,8 @@ docs/adr/                # foundational protocol decisions
 
 - The Emabled reference issuer sandbox is operational.
 - Canonical schemas and byte-level fixture definitions are published for draft review.
-- Python and Node generators/validators/verifiers are published.
+- Python and Node generators/validators/verifiers are published, with a unified
+  `xcim_check.py` command for local and CI runs.
 - No independent implementation has a public interoperability result.
 
 The authoritative public program status is
@@ -34,6 +35,8 @@ remain out of scope.
 python -m pip install -r tools/requirements-ci.txt
 python tools/validate_protocol_schemas.py
 Get-ChildItem tools -Filter 'verify*.mjs' | ForEach-Object { node $_.FullName }
+# Or run the complete check from the repository root:
+python tools/xcim_check.py
 ```
 
 The fixtures use public test-only keys. Never reuse them for real issuers,

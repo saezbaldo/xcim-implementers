@@ -1,0 +1,13 @@
+From: sender@example.invalid
+To: receiver@example.invalid
+Date: Tue, 10 Aug 2026 12:00:00 +0000
+Message-ID: <xcim-shadow-mode-01@example.invalid>
+Subject: XCIM shadow-mode example
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+XCIM-Reference: https://issuer.example.invalid/xcim/receipts/receipt-test-01
+XCIM-Proof: <replace-with-a-verified-proof-bundle>
+
+This message is a sanitized, non-deliverable example for adapter wiring.
+Receivers should parse XCIM headers in shadow mode, verify the referenced
+bundle using the published profile, and keep delivery policy local.

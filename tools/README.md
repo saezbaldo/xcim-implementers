@@ -1,5 +1,15 @@
 # Implementer tools
 
-Planned tools include a local verifier, fixture runner, Docker image and CI
-adapter. They will be added only with versioned fixtures and reproducible
-commands; this directory does not currently contain a conformance claim.
+The public draft includes an offline schema/fixture validator, deterministic
+Node vector verifiers and a single entry point for local or CI use:
+
+```powershell
+python -m pip install -r tools/requirements-ci.txt
+python tools/xcim_check.py
+```
+
+The command runs the Python validator and every `verify*.mjs` runner from the
+repository root. Use `--python-only`, `--node-only` or `--list` to narrow or
+inspect the checks. A green run proves that the published draft artifacts are
+self-consistent; it does not prove interoperability with an independent
+sender, receiver or production trust network.

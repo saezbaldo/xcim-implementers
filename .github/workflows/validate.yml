@@ -17,15 +17,8 @@ jobs:
           python-version: "3.12"
       - name: Install Python validation dependencies
         run: python -m pip install -r tools/requirements-ci.txt
-      - name: Validate schemas and registries
-        run: python tools/validate_protocol_schemas.py
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Verify deterministic vectors
-        shell: bash
-        run: |
-          set -euo pipefail
-          for runner in tools/verify*.mjs; do
-            node "$runner"
-          done
+      - name: Validate schemas and verify deterministic vectors
+        run: python tools/xcim_check.py
