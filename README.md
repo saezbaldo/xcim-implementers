@@ -1,8 +1,8 @@
 # XCIM Implementers Source Drop
 
-This directory is the initial source layout for the public XCIM implementers
-repository. It is intentionally a scaffold until the v0.1 byte-level decisions
-are closed. Do not use it to claim conformance or production trust.
+This repository is the initial source layout for XCIM implementers. It is
+intentionally a scaffold until the v0.1 byte-level decisions are closed. Do not
+use it to claim conformance or production trust.
 
 ## Planned layout
 
@@ -22,6 +22,6 @@ tools/                   # local verifier, fixture runner and CI adapters
 - Test vectors and a conformance CLI are not published.
 - No independent implementation has a public interoperability result.
 
-The source layout should be moved to the public repository only after a remote
-owner, license policy and contribution workflow are approved. Until then, the
-authoritative status is [xcim.org/tools](https://xcim.org/tools/).
+The authoritative public program status is
+[xcim.org/tools](https://xcim.org/tools/). Schemas and vectors will be added to
+this repository only after the corresponding normative decisions are closed.
