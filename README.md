@@ -14,6 +14,7 @@ implementation-reports/ # dated reports from independent implementers
 tools/                   # local generators, validators and verifiers
 registries/              # result-code and media-type registries
 docs/adr/                # foundational protocol decisions
+EARLY-PARTNER-APPLICATION.md # intake brief for the first cohort
 ```
 
 ## Current state
