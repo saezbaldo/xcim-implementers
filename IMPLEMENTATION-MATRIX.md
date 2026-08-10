@@ -12,4 +12,5 @@ does not count as independent interoperability.
 
 The machine-readable version is published at
 [xcim.net/interop-matrix.json](https://xcim.net/interop-matrix.json). The
-current source-drop commit is `3067979`.
+the source-drop baseline is `3067979`; the matrix is versioned with this
+repository and its publication history is visible in Git.
